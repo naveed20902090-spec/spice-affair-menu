@@ -1,0 +1,190 @@
+{
+  "restaurant": {
+    "name": "Spice Affair",
+    "tagline": "Browse the menu — order in person.",
+    "motto": "Where flavor becomes desire"
+  },
+  "sections": [
+    {
+      "id": "masala",
+      "name": "Masala",
+      "items": [
+        {
+          "name": "Egg Masala Dosa",
+          "description": "Crispy dosa with spiced egg masala filling",
+          "price": "TBD",
+          "image": "assets/egg-masala-dosa.webp"
+        },
+        {
+          "name": "Butter Masala Dosa",
+          "description": "Traditional dosa with rich butter and masala",
+          "price": "TBD",
+          "image": "assets/butter-masala-dosa.webp"
+        },
+        {
+          "name": "Cheese Masala Dosa",
+          "description": "Dosa filled with cheese and aromatic masala",
+          "price": "TBD",
+          "image": "assets/cheese-masala-dosa.webp"
+        },
+        {
+          "name": "Butter Cheese Masala",
+          "description": "Indulgent dosa with butter, cheese and masala",
+          "price": "TBD",
+          "image": "assets/butter-cheese-masala.webp"
+        },
+        {
+          "name": "Family Masala Dosa",
+          "description": "Large family-sized masala dosa to share",
+          "price": "TBD",
+          "image": "assets/family-masala-dosa.webp"
+        }
+      ]
+    },
+    {
+      "id": "egg",
+      "name": "Egg",
+      "items": [
+        {
+          "name": "Egg Chicken Dosa",
+          "description": "Dosa with egg and tender chicken pieces",
+          "price": "TBD",
+          "image": "assets/egg-chicken-dosa.webp"
+        },
+        {
+          "name": "Egg Butter Cheese Dosa",
+          "description": "Rich dosa with egg, butter and melted cheese",
+          "price": "TBD",
+          "image": "assets/egg-butter-cheese-dosa.webp"
+        },
+        {
+          "name": "Egg Butter Cheese Chicken Dosa",
+          "description": "Ultimate dosa with egg, butter, cheese and chicken",
+          "price": "TBD",
+          "image": "assets/egg-butter-cheese-chicken-dosa.webp"
+        },
+        {
+          "name": "Naga Egg Dosa",
+          "description": "Spicy Naga-style dosa with egg",
+          "price": "TBD",
+          "image": "assets/naga-egg-dosa.webp"
+        },
+        {
+          "name": "Naga Egg Chicken Dosa",
+          "description": "Fiery Naga dosa with egg and chicken",
+          "price": "TBD",
+          "image": "assets/naga-egg-chicken-dosa.webp"
+        }
+      ]
+    },
+    {
+      "id": "chicken",
+      "name": "Chicken",
+      "items": [
+        {
+          "name": "Butter Chicken Dosa",
+          "description": "Dosa filled with creamy butter chicken",
+          "price": "TBD",
+          "image": "assets/butter-chicken-dosa.webp"
+        },
+        {
+          "name": "Cheese Chicken Dosa",
+          "description": "Chicken dosa topped with melted cheese",
+          "price": "TBD",
+          "image": "assets/cheese-chicken-dosa.webp"
+        },
+        {
+          "name": "Chicken Masala Dosa",
+          "description": "Traditional dosa with spiced chicken masala",
+          "price": "TBD",
+          "image": "assets/chicken-masala-dosa.webp"
+        },
+        {
+          "name": "Butter Cheese Chicken Dosa",
+          "description": "Rich dosa with butter, cheese and chicken",
+          "price": "TBD",
+          "image": "assets/butter-cheese-chicken-dosa.webp"
+        },
+        {
+          "name": "Family Chicken Dosa",
+          "description": "Large family-sized chicken dosa",
+          "price": "TBD",
+          "image": "assets/family-chicken-dosa.webp"
+        },
+        {
+          "name": "Egg Vegetable Dosa Chicken Dosa",
+          "description": "Mixed dosa with egg, vegetables and chicken",
+          "price": "TBD",
+          "image": "assets/egg-vegetable-chicken-dosa.webp"
+        }
+      ]
+    },
+    {
+      "id": "bhatura",
+      "name": "Bhatura/Vegetarian",
+      "items": [
+        {
+          "name": "Regular Chola Bhatura",
+          "description": "Classic chickpea curry with fluffy bhatura",
+          "price": "TBD",
+          "image": "assets/regular-chola-bhatura.webp"
+        },
+        {
+          "name": "Chicken Chola Bhatura",
+          "description": "Chickpea curry with chicken and bhatura",
+          "price": "TBD",
+          "image": "assets/chicken-chola-bhatura.webp"
+        },
+        {
+          "name": "Egg Vegetable Dosa",
+          "description": "Healthy dosa with egg and fresh vegetables",
+          "price": "TBD",
+          "image": "assets/egg-vegetable-dosa.webp"
+        }
+      ]
+    },
+    {
+      "id": "beef",
+      "name": "Beef",
+      "items": [
+        {
+          "name": "Beef Dosa",
+          "description": "Savory dosa filled with spiced beef",
+          "price": "TBD",
+          "image": "assets/beef-dosa.webp"
+        },
+        {
+          "name": "Butter Beef Dosa",
+          "description": "Rich beef dosa with butter",
+          "price": "TBD",
+          "image": "assets/butter-beef-dosa.webp"
+        },
+        {
+          "name": "Egg Beef Dosa",
+          "description": "Dosa with egg and tender beef",
+          "price": "TBD",
+          "image": "assets/egg-beef-dosa.webp"
+        },
+        {
+          "name": "Butter Cheese Beef Dosa",
+          "description": "Indulgent beef dosa with butter and cheese",
+          "price": "TBD",
+          "image": "assets/butter-cheese-beef-dosa.webp"
+        },
+        {
+          "name": "Egg Butter Cheese Beef Dosa",
+          "description": "Ultimate beef dosa with egg, butter and cheese",
+          "price": "TBD",
+          "image": "assets/egg-butter-cheese-beef-dosa.webp"
+        },
+        {
+          "name": "Naga Beef Dosa",
+          "description": "Spicy Naga-style beef dosa",
+          "price": "TBD",
+          "image": "assets/naga-beef-dosa.webp"
+        }
+      ]
+    }
+  ]
+}
+

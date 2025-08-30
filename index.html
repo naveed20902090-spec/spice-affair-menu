@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Affair - Digital Menu</title>
+    <meta name="description" content="Browse the Spice Affair menu - authentic Indian dosas and more. Order in person.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #2d5a3d;
+            --light-green: #4a7c59;
+            --cream: #f8f6f0;
+            --dark-text: #2c2c2c;
+            --light-text: #666;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary-green);
+            background-image: url('assets/chalkboard-background.webp');
+            background-size: cover;
+            background-attachment: fixed;
+            color: var(--white);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .restaurant-name {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .motto {
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-tab {
+            background: none;
+            border: none;
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 44px;
+            min-height: 44px;
+        }
+
+        .nav-tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-tab.active {
+            background: var(--white);
+            color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section */
+        .section {
+            display: none;
+            margin-bottom: 40px;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Carousel Container */
+        .carousel-container {
+            position: relative;
+            margin: 0 -20px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 0 20px 20px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Menu Card */
+        .menu-card {
+            flex: 0 0 280px;
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            scroll-snap-align: start;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: var(--cream);
+        }
+
+        .card-content {
+            padding: 20px;
+            color: var(--dark-text);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary-green);
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .card-price {
+            display: inline-block;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .nav-arrow:hover {
+            background: var(--white);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .nav-arrow.prev {
+            left: -24px;
+        }
+
+        .nav-arrow.next {
+            right: -24px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .restaurant-name {
+                font-size: 2.2rem;
+            }
+
+            .nav-tabs {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .nav-tab {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+
+            .menu-card {
+                flex: 0 0 260px;
+            }
+
+            .nav-arrow {
+                display: none;
+            }
+
+            .carousel-container {
+                margin: 0 -15px;
+            }
+
+            .carousel {
+                padding: 0 15px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .restaurant-name {
+                font-size: 1.8rem;
+            }
+
+            .menu-card {
+                flex: 0 0 240px;
+            }
+
+            .card-content {
+                padding: 16px;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Spice Affair Logo">
+            </div>
+            <h1 class="restaurant-name">Spice Affair</h1>
+            <p class="tagline">Browse the menu — order in person.</p>
+            <p class="motto">Where flavor becomes desire</p>
+        </header>
+
+        <nav class="nav-tabs" role="tablist">
+            <button class="nav-tab active" data-section="masala" role="tab" aria-selected="true" aria-controls="masala-section">Masala</button>
+            <button class="nav-tab" data-section="egg" role="tab" aria-selected="false" aria-controls="egg-section">Egg</button>
+            <button class="nav-tab" data-section="chicken" role="tab" aria-selected="false" aria-controls="chicken-section">Chicken</button>
+            <button class="nav-tab" data-section="bhatura" role="tab" aria-selected="false" aria-controls="bhatura-section">Bhatura</button>
+            <button class="nav-tab" data-section="beef" role="tab" aria-selected="false" aria-controls="beef-section">Beef</button>
+        </nav>
+
+        <main id="menu-content">
+            <div class="loading">Loading menu...</div>
+        </main>
+    </div>
+
+    <script>
+        class SpiceAffairMenu {
+            constructor() {
+                this.menuData = null;
+                this.currentSection = 'masala';
+                this.init();
+            }
+
+            async init() {
+                try {
+                    await this.loadMenu();
+                    this.setupEventListeners();
+                    this.renderMenu();
+                } catch (error) {
+                    console.error('Failed to load menu:', error);
+                    document.getElementById('menu-content').innerHTML = 
+                        '<div class="loading">Failed to load menu. Please refresh the page.</div>';
+                }
+            }
+
+            async loadMenu() {
+                const response = await fetch('menu.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch menu data');
+                }
+                this.menuData = await response.json();
+            }
+
+            setupEventListeners() {
+                // Tab navigation
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        const section = e.target.dataset.section;
+                        this.switchSection(section);
+                    });
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                        const tabs = Array.from(document.querySelectorAll('.nav-tab'));
+                        const currentIndex = tabs.findIndex(tab => tab.classList.contains('active'));
+                        
+                        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                            tabs[currentIndex - 1].click();
+                        } else if (e.key === 'ArrowRight' && currentIndex < tabs.length - 1) {
+                            tabs[currentIndex + 1].click();
+                        }
+                    }
+                });
+            }
+
+            switchSection(sectionId) {
+                // Update tabs
+                document.querySelectorAll('.nav-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                    tab.setAttribute('aria-selected', 'false');
+                });
+                
+                const activeTab = document.querySelector(`[data-section="${sectionId}"]`);
+                activeTab.classList.add('active');
+                activeTab.setAttribute('aria-selected', 'true');
+
+                // Update sections
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                const activeSection = document.getElementById(`${sectionId}-section`);
+                if (activeSection) {
+                    activeSection.classList.add('active');
+                }
+
+                this.currentSection = sectionId;
+            }
+
+            renderMenu() {
+                const container = document.getElementById('menu-content');
+                container.innerHTML = '';
+
+                this.menuData.sections.forEach(section => {
+                    const sectionElement = this.createSection(section);
+                    container.appendChild(sectionElement);
+                });
+
+                // Show default section
+                this.switchSection(this.currentSection);
+                this.setupCarouselNavigation();
+            }
+
+            createSection(section) {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'section';
+                sectionDiv.id = `${section.id}-section`;
+                sectionDiv.setAttribute('role', 'tabpanel');
+                sectionDiv.setAttribute('aria-labelledby', `${section.id}-tab`);
+
+                const title = document.createElement('h2');
+                title.className = 'section-title';
+                title.textContent = section.name;
+
+                const carouselContainer = document.createElement('div');
+                carouselContainer.className = 'carousel-container';
+
+                const carousel = document.createElement('div');
+                carousel.className = 'carousel';
+                carousel.setAttribute('role', 'region');
+                carousel.setAttribute('aria-label', `${section.name} menu items`);
+
+                section.items.forEach(item => {
+                    const card = this.createMenuCard(item);
+                    carousel.appendChild(card);
+                });
+
+                const prevButton = this.createNavButton('prev', '‹');
+                const nextButton = this.createNavButton('next', '›');
+
+                carouselContainer.appendChild(prevButton);
+                carouselContainer.appendChild(carousel);
+                carouselContainer.appendChild(nextButton);
+
+                sectionDiv.appendChild(title);
+                sectionDiv.appendChild(carouselContainer);
+
+                return sectionDiv;
+            }
+
+            createMenuCard(item) {
+                const card = document.createElement('div');
+                card.className = 'menu-card';
+
+                const img = document.createElement('img');
+                img.className = 'card-image';
+                img.src = item.image;
+                img.alt = item.name;
+                img.loading = 'lazy';
+                img.onerror = () => {
+                    img.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI4MCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjhmNmYwIi8+CjxwYXRoIGQ9Ik0xNDAgMTAwTDEyMCA4MEwxNjAgODBMMTQwIDEwMFoiIGZpbGw9IiNjY2MiLz4KPC9zdmc+';
+                };
+
+                const content = document.createElement('div');
+                content.className = 'card-content';
+
+                const title = document.createElement('h3');
+                title.className = 'card-title';
+                title.textContent = item.name;
+
+                const description = document.createElement('p');
+                description.className = 'card-description';
+                description.textContent = item.description;
+
+                const price = document.createElement('span');
+                price.className = 'card-price';
+                price.textContent = item.price;
+
+                content.appendChild(title);
+                content.appendChild(description);
+                content.appendChild(price);
+
+                card.appendChild(img);
+                card.appendChild(content);
+
+                return card;
+            }
+
+            createNavButton(direction, symbol) {
+                const button = document.createElement('button');
+                button.className = `nav-arrow ${direction}`;
+                button.innerHTML = symbol;
+                button.setAttribute('aria-label', `${direction === 'prev' ? 'Previous' : 'Next'} items`);
+                
+                button.addEventListener('click', () => {
+                    const carousel = button.parentElement.querySelector('.carousel');
+                    const cardWidth = 300; // card width + gap
+                    const scrollAmount = direction === 'prev' ? -cardWidth : cardWidth;
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                return button;
+            }
+
+            setupCarouselNavigation() {
+                // Touch/swipe support for mobile
+                document.querySelectorAll('.carousel').forEach(carousel => {
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+
+                    carousel.addEventListener('mousedown', (e) => {
+                        isDown = true;
+                        startX = e.pageX - carousel.offsetLeft;
+                        scrollLeft = carousel.scrollLeft;
+                    });
+
+                    carousel.addEventListener('mouseleave', () => {
+                        isDown = false;
+                    });
+
+                    carousel.addEventListener('mouseup', () => {
+                        isDown = false;
+                    });
+
+                    carousel.addEventListener('mousemove', (e) => {
+                        if (!isDown) return;
+                        e.preventDefault();
+                        const x = e.pageX - carousel.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        carousel.scrollLeft = scrollLeft - walk;
+                    });
+                });
+            }
+        }
+
+        // Initialize the menu when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new SpiceAffairMenu();
+        });
+
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+
