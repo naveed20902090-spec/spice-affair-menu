@@ -10,33 +10,39 @@
       "name": "Masala",
       "items": [
         {
+          "name": "Masala Dosa",
+          "description": "Crispy dosa with spiced masala",
+          "price": "৳100",
+          "image": "assets/egg-masala-dosa.webp"
+        },
+        {
           "name": "Egg Masala Dosa",
           "description": "Crispy dosa with spiced egg masala filling",
-          "price": "TBD",
+          "price": "৳120",
           "image": "assets/egg-masala-dosa.webp"
         },
         {
           "name": "Butter Masala Dosa",
           "description": "Traditional dosa with rich butter and masala",
-          "price": "TBD",
+          "price": "৳120",
           "image": "assets/butter-masala-dosa.webp"
         },
         {
           "name": "Cheese Masala Dosa",
           "description": "Dosa filled with cheese and aromatic masala",
-          "price": "TBD",
+          "price": "৳120",
           "image": "assets/cheese-masala-dosa.webp"
         },
         {
           "name": "Butter Cheese Masala",
           "description": "Indulgent dosa with butter, cheese and masala",
-          "price": "TBD",
+          "price": "৳160",
           "image": "assets/butter-cheese-masala.webp"
         },
         {
           "name": "Family Masala Dosa",
           "description": "Large family-sized masala dosa to share",
-          "price": "TBD",
+          "price": "৳200",
           "image": "assets/family-masala-dosa.webp"
         }
       ]
@@ -48,31 +54,31 @@
         {
           "name": "Egg Chicken Dosa",
           "description": "Dosa with egg and tender chicken pieces",
-          "price": "TBD",
+          "price": "৳180",
           "image": "assets/egg-chicken-dosa.webp"
         },
         {
           "name": "Egg Butter Cheese Dosa",
           "description": "Rich dosa with egg, butter and melted cheese",
-          "price": "TBD",
+          "price": "৳200",
           "image": "assets/egg-butter-cheese-dosa.webp"
         },
         {
           "name": "Egg Butter Cheese Chicken Dosa",
           "description": "Ultimate dosa with egg, butter, cheese and chicken",
-          "price": "TBD",
+          "price": "৳250",
           "image": "assets/egg-butter-cheese-chicken-dosa.webp"
         },
         {
           "name": "Naga Egg Dosa",
           "description": "Spicy Naga-style dosa with egg",
-          "price": "TBD",
+          "price": "৳140",
           "image": "assets/naga-egg-dosa.webp"
         },
         {
           "name": "Naga Egg Chicken Dosa",
           "description": "Fiery Naga dosa with egg and chicken",
-          "price": "TBD",
+          "price": "৳190",
           "image": "assets/naga-egg-chicken-dosa.webp"
         }
       ]
@@ -84,37 +90,37 @@
         {
           "name": "Butter Chicken Dosa",
           "description": "Dosa filled with creamy butter chicken",
-          "price": "TBD",
+          "price": "৳180",
           "image": "assets/butter-chicken-dosa.webp"
         },
         {
           "name": "Cheese Chicken Dosa",
           "description": "Chicken dosa topped with melted cheese",
-          "price": "TBD",
+          "price": "৳180",
           "image": "assets/cheese-chicken-dosa.webp"
         },
         {
           "name": "Chicken Masala Dosa",
           "description": "Traditional dosa with spiced chicken masala",
-          "price": "TBD",
+          "price": "৳150",
           "image": "assets/chicken-masala-dosa.webp"
         },
         {
           "name": "Butter Cheese Chicken Dosa",
           "description": "Rich dosa with butter, cheese and chicken",
-          "price": "TBD",
+          "price": "৳200",
           "image": "assets/butter-cheese-chicken-dosa.webp"
         },
         {
           "name": "Family Chicken Dosa",
           "description": "Large family-sized chicken dosa",
-          "price": "TBD",
+          "price": "৳250",
           "image": "assets/family-chicken-dosa.webp"
         },
         {
           "name": "Egg Vegetable Dosa Chicken Dosa",
           "description": "Mixed dosa with egg, vegetables and chicken",
-          "price": "TBD",
+          "price": "৳300",
           "image": "assets/egg-vegetable-chicken-dosa.webp"
         }
       ]
@@ -126,20 +132,14 @@
         {
           "name": "Regular Chola Bhatura",
           "description": "Classic chickpea curry with fluffy bhatura",
-          "price": "TBD",
+          "price": "৳100",
           "image": "assets/regular-chola-bhatura.webp"
         },
         {
           "name": "Chicken Chola Bhatura",
           "description": "Chickpea curry with chicken and bhatura",
-          "price": "TBD",
+          "price": "৳150",
           "image": "assets/chicken-chola-bhatura.webp"
-        },
-        {
-          "name": "Egg Vegetable Dosa",
-          "description": "Healthy dosa with egg and fresh vegetables",
-          "price": "TBD",
-          "image": "assets/egg-vegetable-dosa.webp"
         }
       ]
     },
@@ -150,37 +150,37 @@
         {
           "name": "Beef Dosa",
           "description": "Savory dosa filled with spiced beef",
-          "price": "TBD",
+          "price": "৳280",
           "image": "assets/beef-dosa.webp"
         },
         {
           "name": "Butter Beef Dosa",
           "description": "Rich beef dosa with butter",
-          "price": "TBD",
+          "price": "৳300",
           "image": "assets/butter-beef-dosa.webp"
         },
         {
           "name": "Egg Beef Dosa",
           "description": "Dosa with egg and tender beef",
-          "price": "TBD",
+          "price": "৳300",
           "image": "assets/egg-beef-dosa.webp"
         },
         {
           "name": "Butter Cheese Beef Dosa",
           "description": "Indulgent beef dosa with butter and cheese",
-          "price": "TBD",
+          "price": "৳320",
           "image": "assets/butter-cheese-beef-dosa.webp"
         },
         {
           "name": "Egg Butter Cheese Beef Dosa",
           "description": "Ultimate beef dosa with egg, butter and cheese",
-          "price": "TBD",
+          "price": "৳340",
           "image": "assets/egg-butter-cheese-beef-dosa.webp"
         },
         {
-          "name": "Naga Beef Dosa",
+          "name": "Egg Naga Beef Dosa",
           "description": "Spicy Naga-style beef dosa",
-          "price": "TBD",
+          "price": "৳320",
           "image": "assets/naga-beef-dosa.webp"
         }
       ]
